@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C0739BF117D0067000F10426 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0739BF017D0067000F10426 /* Cocoa.framework */; };
+		C0739BFB17D0067000F10426 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0739BF917D0067000F10426 /* InfoPlist.strings */; };
+		C0739BFD17D0067000F10426 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0739BFC17D0067000F10426 /* main.m */; };
+		C0739C0117D0067000F10426 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C0739BFF17D0067000F10426 /* Credits.rtf */; };
+		C0739C0417D0067000F10426 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0739C0317D0067000F10426 /* AppDelegate.m */; };
+		C0739C0717D0067000F10426 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0739C0517D0067000F10426 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C0739BED17D0067000F10426 /* WCNU Station Sign In.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WCNU Station Sign In.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0739BF017D0067000F10426 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C0739BF317D0067000F10426 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C0739BF417D0067000F10426 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C0739BF517D0067000F10426 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C0739BF817D0067000F10426 /* WCNU Station Sign In-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WCNU Station Sign In-Info.plist"; sourceTree = "<group>"; };
+		C0739BFA17D0067000F10426 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C0739BFC17D0067000F10426 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C0739BFE17D0067000F10426 /* WCNU Station Sign In-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WCNU Station Sign In-Prefix.pch"; sourceTree = "<group>"; };
+		C0739C0017D0067000F10426 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		C0739C0217D0067000F10426 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C0739C0317D0067000F10426 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C0739C0617D0067000F10426 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C0739BEA17D0067000F10426 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0739BF117D0067000F10426 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C0739BE417D0067000F10426 = {
+			isa = PBXGroup;
+			children = (
+				C0739BF617D0067000F10426 /* WCNU Station Sign In */,
+				C0739BEF17D0067000F10426 /* Frameworks */,
+				C0739BEE17D0067000F10426 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C0739BEE17D0067000F10426 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0739BED17D0067000F10426 /* WCNU Station Sign In.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0739BEF17D0067000F10426 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0739BF017D0067000F10426 /* Cocoa.framework */,
+				C0739BF217D0067000F10426 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0739BF217D0067000F10426 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0739BF317D0067000F10426 /* AppKit.framework */,
+				C0739BF417D0067000F10426 /* CoreData.framework */,
+				C0739BF517D0067000F10426 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		C0739BF617D0067000F10426 /* WCNU Station Sign In */ = {
+			isa = PBXGroup;
+			children = (
+				C0739C0217D0067000F10426 /* AppDelegate.h */,
+				C0739C0317D0067000F10426 /* AppDelegate.m */,
+				C0739C0517D0067000F10426 /* MainMenu.xib */,
+				C0739BF717D0067000F10426 /* Supporting Files */,
+			);
+			path = "WCNU Station Sign In";
+			sourceTree = "<group>";
+		};
+		C0739BF717D0067000F10426 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C0739BF817D0067000F10426 /* WCNU Station Sign In-Info.plist */,
+				C0739BF917D0067000F10426 /* InfoPlist.strings */,
+				C0739BFC17D0067000F10426 /* main.m */,
+				C0739BFE17D0067000F10426 /* WCNU Station Sign In-Prefix.pch */,
+				C0739BFF17D0067000F10426 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C0739BEC17D0067000F10426 /* WCNU Station Sign In */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0739C0A17D0067000F10426 /* Build configuration list for PBXNativeTarget "WCNU Station Sign In" */;
+			buildPhases = (
+				C0739BE917D0067000F10426 /* Sources */,
+				C0739BEA17D0067000F10426 /* Frameworks */,
+				C0739BEB17D0067000F10426 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WCNU Station Sign In";
+			productName = "WCNU Station Sign In";
+			productReference = C0739BED17D0067000F10426 /* WCNU Station Sign In.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0739BE517D0067000F10426 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = WCNURadio;
+			};
+			buildConfigurationList = C0739BE817D0067000F10426 /* Build configuration list for PBXProject "WCNU Station Sign In" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C0739BE417D0067000F10426;
+			productRefGroup = C0739BEE17D0067000F10426 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C0739BEC17D0067000F10426 /* WCNU Station Sign In */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C0739BEB17D0067000F10426 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0739BFB17D0067000F10426 /* InfoPlist.strings in Resources */,
+				C0739C0117D0067000F10426 /* Credits.rtf in Resources */,
+				C0739C0717D0067000F10426 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0739BE917D0067000F10426 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0739BFD17D0067000F10426 /* main.m in Sources */,
+				C0739C0417D0067000F10426 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C0739BF917D0067000F10426 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0739BFA17D0067000F10426 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C0739BFF17D0067000F10426 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0739C0017D0067000F10426 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		C0739C0517D0067000F10426 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0739C0617D0067000F10426 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C0739C0817D0067000F10426 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C0739C0917D0067000F10426 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C0739C0B17D0067000F10426 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WCNU Station Sign In/WCNU Station Sign In-Prefix.pch";
+				INFOPLIST_FILE = "WCNU Station Sign In/WCNU Station Sign In-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C0739C0C17D0067000F10426 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WCNU Station Sign In/WCNU Station Sign In-Prefix.pch";
+				INFOPLIST_FILE = "WCNU Station Sign In/WCNU Station Sign In-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0739BE817D0067000F10426 /* Build configuration list for PBXProject "WCNU Station Sign In" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0739C0817D0067000F10426 /* Debug */,
+				C0739C0917D0067000F10426 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0739C0A17D0067000F10426 /* Build configuration list for PBXNativeTarget "WCNU Station Sign In" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0739C0B17D0067000F10426 /* Debug */,
+				C0739C0C17D0067000F10426 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C0739BE517D0067000F10426 /* Project object */;
+}

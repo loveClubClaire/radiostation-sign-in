@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'WCNU Station Sign In' target in the 'WCNU Station Sign In' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
