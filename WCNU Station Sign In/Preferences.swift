@@ -41,21 +41,24 @@ class Preferences: NSObject {
         generalPreferencesWindow.title = "Podcasts"
     }
     
+    //When the user requests to change the location of the signin logs folder this function is called. It spawns a file selector panel which can only select a single directory. If the user selects a directory, setFolderMenu is called to update the menu item so that it shows the new directory.
     @IBAction func getSignInLogsFolder(sender: AnyObject) {
-        
         let myPanel = NSOpenPanel()
         myPanel.allowsMultipleSelection = false
         myPanel.canChooseDirectories = true
         myPanel.canChooseFiles = false;
+        //If user confirms then call setFolderMenu to update the menu object and update the filepath by setting the signinFilepath variable
         if myPanel.runModal() == NSModalResponseOK {
             setFolderMenu(myPanel.URLs[0].path!, aMenu: signinMenu)
+            signinFilepath = myPanel.URLs[0].path!
         }
+        //If the user cancels then make the menu have the currect directory selected, not the change filepath option selected. Its a UI thing.
         else{
-            
+            signinMenu.performActionForItemAtIndex(0)
         }
     }
     
-    
+    //Gets a filepath and a menu and sets the first menuItem in the menu to the file given by the filepath and then selects that menuItem
     func setFolderMenu(aFilepath: String, aMenu: NSMenu){
         let myWorkspace = NSWorkspace()
         let fileImage = myWorkspace.iconForFile(aFilepath)
