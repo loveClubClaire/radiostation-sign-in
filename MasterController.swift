@@ -56,6 +56,8 @@ class MasterController: NSObject{
         }
         
         //Write the resulting csv string to a file
+        csv += "\n\n"
+        writeToAttendanceFile(csv)
         
         //Run confirmation dialog for user to see
         let myAlert = NSAlert()
@@ -72,9 +74,6 @@ class MasterController: NSObject{
         stationStatusTextField.stringValue = ""
         podcastNameTextField.stringValue = ""
         isPodcastButton.state = NSOffState
-        
-        
-        
     }
     
     func writeToAttendanceFile(signIn: String){
@@ -84,7 +83,7 @@ class MasterController: NSObject{
         dateFormatter.dateFormat = "yyyy-MM-dd"
         //Get the filepath from the preferencesObject and use the date as the fileName
         let fileAndFilepath = preferencesObject.getSigninFilepath() + "/" + dateFormatter.stringFromDate(todaysDate) + ".txt"
-        //If the file doesn't exist, the create the file and write the passed signIn to it. If the file does exist, concatinate the signIn to that file. 
+        //If the file doesn't exist, the create the file and write the passed signIn to it. If the file does exist, concatinate the signIn to that file.
         if NSFileManager().fileExistsAtPath(fileAndFilepath) == false {
             do{
                 try signIn.writeToFile(fileAndFilepath, atomically: false, encoding: NSUTF8StringEncoding)
