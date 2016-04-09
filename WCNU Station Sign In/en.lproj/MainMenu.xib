@@ -856,9 +856,13 @@ DQ
                 <outlet property="generalPreferences" destination="hDz-24-xgN" id="Yxy-yN-Zxd"/>
                 <outlet property="generalPreferencesView" destination="R1C-id-fLt" id="Lin-Al-fBj"/>
                 <outlet property="generalPreferencesWindow" destination="LnT-Dy-uFk" id="dy1-2d-j5D"/>
+                <outlet property="getPodcastDestinationFolder" destination="daO-0W-hRZ" id="91R-U0-v8L"/>
+                <outlet property="podcastDestinationMenu" destination="TQ4-F6-n6s" id="cuw-K7-FDY"/>
+                <outlet property="podcastLocationMenu" destination="tTY-fo-asB" id="vgd-d5-hcc"/>
                 <outlet property="podcastsPreferences" destination="uAt-5T-XSF" id="HKl-xV-EFE"/>
                 <outlet property="podcastsPreferencesView" destination="tiC-VR-Rz2" id="atK-cD-4L8"/>
-                <outlet property="signinMenu" destination="Gsq-Jy-nLp" id="Mea-nL-sUX"/>
+                <outlet property="signinMenu" destination="zI9-Ln-gfe" id="lGz-DH-pBE"/>
+                <outlet property="songLogMenu" destination="AUW-US-Pdz" id="GYZ-rY-Ej7"/>
             </connections>
         </customObject>
         <customObject id="KlH-cd-umc" customClass="MasterController" customModule="WCNU_Station_Sign_In" customModuleProvider="target">
@@ -1052,89 +1056,6 @@ DQ
             <view key="contentView" id="Jwb-2B-AdA">
                 <rect key="frame" x="0.0" y="-7" width="450" height="151"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="TS4-h4-5pi">
-                        <rect key="frame" x="-14" y="56" width="504" height="5"/>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" metaFont="system"/>
-                    </box>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JXc-4a-z7p">
-                        <rect key="frame" x="346" y="13" width="90" height="32"/>
-                        <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lIS-um-WX3">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <string key="keyEquivalent" base64-UTF8="YES">
-DQ
-</string>
-                        </buttonCell>
-                    </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nMM-a9-7aN">
-                        <rect key="frame" x="256" y="13" width="90" height="32"/>
-                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ct8-9I-hFv">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <string key="keyEquivalent" base64-UTF8="YES">
-Gw
-</string>
-                        </buttonCell>
-                    </button>
-                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="60m-PN-c2L">
-                        <rect key="frame" x="18" y="17" width="25" height="25"/>
-                        <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HZb-dx-tRh">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                    </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q0U-1b-zC9">
-                        <rect key="frame" x="43" y="114" width="124" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sign in Logs Folder:" id="QDr-iP-inX">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1f-9s-mZa">
-                        <rect key="frame" x="171" y="107" width="235" height="26"/>
-                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="Zwm-bX-52h">
-                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="menu"/>
-                            <menu key="menu" id="Gsq-Jy-nLp">
-                                <items>
-                                    <menuItem title="Item 1" id="H7a-hT-rJl"/>
-                                    <menuItem isSeparatorItem="YES" id="Xbo-Mb-5dx"/>
-                                    <menuItem title="Other..." id="ORS-aB-a3f">
-                                        <connections>
-                                            <action selector="getSignInLogsFolder:" target="it5-lR-BCB" id="1pp-WV-p0j"/>
-                                        </connections>
-                                    </menuItem>
-                                </items>
-                            </menu>
-                        </popUpButtonCell>
-                    </popUpButton>
-                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u3n-UE-Ce3">
-                        <rect key="frame" x="171" y="66" width="235" height="26"/>
-                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="wdj-5T-y0u" id="fMr-yS-ouD">
-                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="menu"/>
-                            <menu key="menu" id="vte-Gw-1Y5">
-                                <items>
-                                    <menuItem title="Item 1" state="on" id="wdj-5T-y0u"/>
-                                    <menuItem isSeparatorItem="YES" id="eBc-fQ-ZSp"/>
-                                    <menuItem title="Other..." id="BBh-0j-EcC"/>
-                                </items>
-                            </menu>
-                        </popUpButtonCell>
-                    </popUpButton>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7BS-Ct-2ty">
-                        <rect key="frame" x="60" y="73" width="107" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Song Log Folder:" id="FmX-jY-tjy">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                </subviews>
             </view>
             <toolbar key="toolbar" implicitIdentifier="016E683C-85A3-4F72-85FB-845BC186F560" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="eMd-bc-Yhx">
                 <allowedToolbarItems>
@@ -1219,14 +1140,18 @@ Gw
                 </textField>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Veu-mV-O4x">
                     <rect key="frame" x="211" y="101" width="205" height="26"/>
-                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Cya-18-3P6" id="lkD-pI-d55">
+                    <popUpButtonCell key="cell" type="push" title="Other..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="daO-0W-hRZ" id="lkD-pI-d55">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="TQ4-F6-n6s">
                             <items>
-                                <menuItem title="Item 1" state="on" id="Cya-18-3P6"/>
+                                <menuItem title="Item 1" id="Cya-18-3P6"/>
                                 <menuItem isSeparatorItem="YES" id="H5n-8o-bdl"/>
-                                <menuItem title="Other..." id="daO-0W-hRZ"/>
+                                <menuItem title="Other..." state="on" id="daO-0W-hRZ">
+                                    <connections>
+                                        <action selector="getPodcastDestinationFolder:" target="it5-lR-BCB" id="f11-MP-Psb"/>
+                                    </connections>
+                                </menuItem>
                             </items>
                         </menu>
                     </popUpButtonCell>
@@ -1240,7 +1165,11 @@ Gw
                             <items>
                                 <menuItem title="Item 1" state="on" id="vI0-gi-eVa"/>
                                 <menuItem isSeparatorItem="YES" id="Xu3-WE-wcB"/>
-                                <menuItem title="Other..." id="sLq-Gv-IAZ"/>
+                                <menuItem title="Other..." id="sLq-Gv-IAZ">
+                                    <connections>
+                                        <action selector="getPodcastLocationFolder:" target="it5-lR-BCB" id="TLX-Ix-hpS"/>
+                                    </connections>
+                                </menuItem>
                             </items>
                         </menu>
                     </popUpButtonCell>
@@ -1295,28 +1224,36 @@ Gw
                 </textField>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVj-qt-KGw">
                     <rect key="frame" x="172" y="107" width="235" height="26"/>
-                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="hsN-Wf-60b" id="vLE-5m-uCM">
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="vLE-5m-uCM">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="zI9-Ln-gfe">
                             <items>
-                                <menuItem title="Item 1" state="on" id="hsN-Wf-60b"/>
+                                <menuItem title="Item 1" id="hsN-Wf-60b"/>
                                 <menuItem isSeparatorItem="YES" id="aam-J9-kCo"/>
-                                <menuItem title="Other..." id="KCt-uz-lZU"/>
+                                <menuItem title="Other..." id="KCt-uz-lZU">
+                                    <connections>
+                                        <action selector="getSignInLogsFolder:" target="it5-lR-BCB" id="B0O-Wp-WGJ"/>
+                                    </connections>
+                                </menuItem>
                             </items>
                         </menu>
                     </popUpButtonCell>
                 </popUpButton>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1dD-mt-jgW">
                     <rect key="frame" x="172" y="66" width="235" height="26"/>
-                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="czw-c0-d7y" id="UZi-Ug-skX">
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="UZi-Ug-skX">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="AUW-US-Pdz">
                             <items>
-                                <menuItem title="Item 1" state="on" id="czw-c0-d7y"/>
+                                <menuItem title="Item 1" id="czw-c0-d7y"/>
                                 <menuItem isSeparatorItem="YES" id="Mt2-6N-FB4"/>
-                                <menuItem title="Other..." id="UDh-T9-4oc"/>
+                                <menuItem title="Other..." id="UDh-T9-4oc">
+                                    <connections>
+                                        <action selector="getSongLogFolder:" target="it5-lR-BCB" id="nDR-cH-TnV"/>
+                                    </connections>
+                                </menuItem>
                             </items>
                         </menu>
                     </popUpButtonCell>
