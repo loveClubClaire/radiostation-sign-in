@@ -26,7 +26,11 @@
                             <menuItem isSeparatorItem="YES" id="236">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Preferences…" keyEquivalent="," id="129"/>
+                            <menuItem title="Preferences…" keyEquivalent="," id="129">
+                                <connections>
+                                    <action selector="preferencesButton:" target="it5-lR-BCB" id="Mdx-Li-9Bq"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="143">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
@@ -861,6 +865,7 @@ DQ
                 <outlet property="podcastLocationMenu" destination="tTY-fo-asB" id="vgd-d5-hcc"/>
                 <outlet property="podcastsPreferences" destination="uAt-5T-XSF" id="HKl-xV-EFE"/>
                 <outlet property="podcastsPreferencesView" destination="tiC-VR-Rz2" id="atK-cD-4L8"/>
+                <outlet property="preferencesButton" destination="129" id="xmg-NM-Q3Z"/>
                 <outlet property="signinMenu" destination="zI9-Ln-gfe" id="lGz-DH-pBE"/>
                 <outlet property="songLogMenu" destination="AUW-US-Pdz" id="GYZ-rY-Ej7"/>
             </connections>
@@ -1046,7 +1051,7 @@ DQ
             </view>
             <point key="canvasLocation" x="226.5" y="1251"/>
         </window>
-        <window title="General" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="LnT-Dy-uFk">
+        <window title="General" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="LnT-Dy-uFk">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="131" y="165" width="450" height="151"/>
@@ -1158,12 +1163,12 @@ Gw
                 </popUpButton>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jUA-3L-75G">
                     <rect key="frame" x="211" y="60" width="205" height="26"/>
-                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="vI0-gi-eVa" id="ODe-xg-Drv">
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="ODe-xg-Drv">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="tTY-fo-asB">
                             <items>
-                                <menuItem title="Item 1" state="on" id="vI0-gi-eVa"/>
+                                <menuItem title="Item 1" id="vI0-gi-eVa"/>
                                 <menuItem isSeparatorItem="YES" id="Xu3-WE-wcB"/>
                                 <menuItem title="Other..." id="sLq-Gv-IAZ">
                                     <connections>

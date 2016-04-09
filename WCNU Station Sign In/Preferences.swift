@@ -24,6 +24,19 @@ class Preferences: NSObject {
     var podcastDestinationFilepath = ""
     var preferencesFilePath = ""
     
+ 
+    @IBAction func preferencesButton(sender: AnyObject) {
+        //Make the preferences window visable and place the generalPreferencesView into the preferences window 
+        generalPreferencesWindow.contentView = generalPreferencesView
+        generalPreferencesWindow.center()
+        generalPreferencesWindow.makeKeyAndOrderFront(self)
+        
+        //Set the pop up buttons to their respective folders
+        setFolderMenu(signinFilepath, aMenu: signinMenu)
+        setFolderMenu(podcastDestinationFilepath, aMenu: podcastDestinationMenu)
+        setFolderMenu(songLogFilepath, aMenu: songLogMenu)
+        setFolderMenu(podcastFilepath, aMenu: podcastLocationMenu)
+    }
 
     override init() {
         let fileManager = NSFileManager()
@@ -43,10 +56,10 @@ class Preferences: NSObject {
         if preferencesValues == nil {
             do{
             let desktopFilepathURL = try fileManager.URLForDirectory(NSSearchPathDirectory.DesktopDirectory, inDomain: NSSearchPathDomainMask.UserDomainMask, appropriateForURL: nil, create:false)
-                signinFilepath = desktopFilepathURL.absoluteString
-                podcastFilepath = desktopFilepathURL.absoluteString
-                songLogFilepath = desktopFilepathURL.absoluteString
-                podcastDestinationFilepath = desktopFilepathURL.absoluteString
+                signinFilepath = desktopFilepathURL.path!
+                podcastFilepath = desktopFilepathURL.path!
+                songLogFilepath = desktopFilepathURL.path!
+                podcastDestinationFilepath = desktopFilepathURL.path!
             }
             catch{
                 NSLog("Failed to get the desktop filepath :| Like how?")
@@ -60,10 +73,7 @@ class Preferences: NSObject {
     }
     
     
-//    setFolderMenu(desktopFilepathURL.absoluteString, aMenu: signinMenu)
-//    setFolderMenu(desktopFilepathURL.absoluteString, aMenu: podcastDestinationMenu)
-//    setFolderMenu(desktopFilepathURL.absoluteString, aMenu: songLogMenu)
-//    setFolderMenu(desktopFilepathURL.absoluteString, aMenu: podcastLocationMenu)
+
     
     //place the generalPreferencesView onto the generalPreferenceWindow and change the size of the window to fit the frame. Change the title of the window as well
     @IBAction func generalPreferences(sender: AnyObject) {
