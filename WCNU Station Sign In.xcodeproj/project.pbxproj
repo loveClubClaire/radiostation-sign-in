@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C00691E71CB8BC8800F75A7B /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00691E61CB8BC8800F75A7B /* Preferences.swift */; };
+		C00691E91CB8BE7100F75A7B /* Apple_Podcast_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C00691E81CB8BE7100F75A7B /* Apple_Podcast_logo.png */; };
 		C05E554517E395BC00B22312 /* WCNU Sign In Logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = C05E554417E395BC00B22312 /* WCNU Sign In Logo.icns */; };
 		C0739BF117D0067000F10426 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0739BF017D0067000F10426 /* Cocoa.framework */; };
 		C0739BFB17D0067000F10426 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0739BF917D0067000F10426 /* InfoPlist.strings */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C00691E61CB8BC8800F75A7B /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		C00691E81CB8BE7100F75A7B /* Apple_Podcast_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Apple_Podcast_logo.png; sourceTree = "<group>"; };
 		C05E554417E395BC00B22312 /* WCNU Sign In Logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "WCNU Sign In Logo.icns"; sourceTree = "<group>"; };
 		C0739BED17D0067000F10426 /* WCNU Station Sign In.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WCNU Station Sign In.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0739BF017D0067000F10426 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -52,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				C05E554417E395BC00B22312 /* WCNU Sign In Logo.icns */,
+				C00691E81CB8BE7100F75A7B /* Apple_Podcast_logo.png */,
 				C0739BF617D0067000F10426 /* WCNU Station Sign In */,
 				C0739BEF17D0067000F10426 /* Frameworks */,
 				C0739BEE17D0067000F10426 /* Products */,
@@ -93,6 +98,7 @@
 				C0739C0317D0067000F10426 /* AppDelegate.m */,
 				C0739C0517D0067000F10426 /* MainMenu.xib */,
 				C0AA5B201CB8A40300C26251 /* MasterController.swift */,
+				C00691E61CB8BC8800F75A7B /* Preferences.swift */,
 				C0739BF717D0067000F10426 /* Supporting Files */,
 			);
 			path = "WCNU Station Sign In";
@@ -165,6 +171,7 @@
 				C0739BFB17D0067000F10426 /* InfoPlist.strings in Resources */,
 				C0739C0117D0067000F10426 /* Credits.rtf in Resources */,
 				C0739C0717D0067000F10426 /* MainMenu.xib in Resources */,
+				C00691E91CB8BE7100F75A7B /* Apple_Podcast_logo.png in Resources */,
 				C05E554517E395BC00B22312 /* WCNU Sign In Logo.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,6 +185,7 @@
 			files = (
 				C0AA5B211CB8A40300C26251 /* MasterController.swift in Sources */,
 				C0739BFD17D0067000F10426 /* main.m in Sources */,
+				C00691E71CB8BC8800F75A7B /* Preferences.swift in Sources */,
 				C0739C0417D0067000F10426 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
