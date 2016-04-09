@@ -689,7 +689,7 @@ DQ
 </string>
                         </buttonCell>
                         <connections>
-                            <action selector="submit:" target="494" id="596"/>
+                            <action selector="submit:" target="KlH-cd-umc" id="QY0-sh-IhA"/>
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="540">
@@ -855,12 +855,13 @@ DQ
             <connections>
                 <outlet property="d" destination="561" id="Jdn-8Y-ZOX"/>
                 <outlet property="eMailOneTextField" destination="547" id="tef-em-pG8"/>
-                <outlet property="emailOneTextField" destination="547" id="TD0-S5-8eS"/>
-                <outlet property="emailTwoTextField" destination="598" id="rMf-3o-JmD"/>
+                <outlet property="emailOneTextField" destination="546" id="k00-dl-2sv"/>
+                <outlet property="emailTwoTextField" destination="597" id="s7Y-0n-DJp"/>
                 <outlet property="isPodcastButton" destination="574" id="cIa-Ja-xsY"/>
-                <outlet property="podcastNameTextField" destination="553" id="fLv-J4-boh"/>
-                <outlet property="showNameTextField" destination="541" id="RZf-LY-Svq"/>
-                <outlet property="stationStatusTextField" destination="561" id="L9Q-8a-DMm"/>
+                <outlet property="podcastNameTextField" destination="552" id="wg3-yO-Kr4"/>
+                <outlet property="showNameTextField" destination="540" id="LeC-7e-54y"/>
+                <outlet property="stationStatusTextField" destination="560" id="Tkd-Le-8T1"/>
+                <outlet property="submit" destination="536" id="pfa-bs-Vjc"/>
             </connections>
         </customObject>
         <customObject id="420" customClass="NSFontManager"/>

@@ -10,12 +10,21 @@ import Foundation
 import Cocoa
 
 class MasterController: NSObject{
-    @IBOutlet weak var showNameTextField: NSTextFieldCell!
-    @IBOutlet weak var emailOneTextField: NSTextFieldCell!
-    @IBOutlet weak var emailTwoTextField: NSTextFieldCell!
-    @IBOutlet weak var stationStatusTextField: NSTextFieldCell!
-    @IBOutlet weak var podcastNameTextField: NSTextFieldCell!
+
+    @IBOutlet weak var showNameTextField: NSTextField!
+    @IBOutlet weak var emailOneTextField: NSTextField!
+    @IBOutlet weak var emailTwoTextField: NSTextField!
+    @IBOutlet weak var stationStatusTextField: NSTextField!
+    @IBOutlet weak var podcastNameTextField: NSTextField!
     @IBOutlet weak var isPodcastButton: NSButton!
+    
+    
+
+    @IBAction func submit(sender: AnyObject) {
+        
+        
+        
+    }
     
     
 }
