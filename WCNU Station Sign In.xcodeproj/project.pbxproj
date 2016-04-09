@@ -14,6 +14,7 @@
 		C0739C0117D0067000F10426 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C0739BFF17D0067000F10426 /* Credits.rtf */; };
 		C0739C0417D0067000F10426 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0739C0317D0067000F10426 /* AppDelegate.m */; };
 		C0739C0717D0067000F10426 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0739C0517D0067000F10426 /* MainMenu.xib */; };
+		C0AA5B211CB8A40300C26251 /* MasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA5B201CB8A40300C26251 /* MasterController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		C0739C0217D0067000F10426 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C0739C0317D0067000F10426 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C0739C0617D0067000F10426 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C0AA5B1F1CB8A40300C26251 /* WCNU Station Sign In-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WCNU Station Sign In-Bridging-Header.h"; sourceTree = "<group>"; };
+		C0AA5B201CB8A40300C26251 /* MasterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterController.swift; path = ../MasterController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +55,7 @@
 				C0739BF617D0067000F10426 /* WCNU Station Sign In */,
 				C0739BEF17D0067000F10426 /* Frameworks */,
 				C0739BEE17D0067000F10426 /* Products */,
+				C0AA5B1F1CB8A40300C26251 /* WCNU Station Sign In-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +92,7 @@
 				C0739C0217D0067000F10426 /* AppDelegate.h */,
 				C0739C0317D0067000F10426 /* AppDelegate.m */,
 				C0739C0517D0067000F10426 /* MainMenu.xib */,
+				C0AA5B201CB8A40300C26251 /* MasterController.swift */,
 				C0739BF717D0067000F10426 /* Supporting Files */,
 			);
 			path = "WCNU Station Sign In";
@@ -131,6 +136,7 @@
 		C0739BE517D0067000F10426 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = WCNURadio;
 			};
@@ -170,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0AA5B211CB8A40300C26251 /* MasterController.swift in Sources */,
 				C0739BFD17D0067000F10426 /* main.m in Sources */,
 				C0739C0417D0067000F10426 /* AppDelegate.m in Sources */,
 			);
@@ -265,12 +272,16 @@
 		C0739C0B17D0067000F10426 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WCNU Station Sign In/WCNU Station Sign In-Prefix.pch";
 				INFOPLIST_FILE = "WCNU Station Sign In/WCNU Station Sign In-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WCNU Station Sign In-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -278,12 +289,15 @@
 		C0739C0C17D0067000F10426 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WCNU Station Sign In/WCNU Station Sign In-Prefix.pch";
 				INFOPLIST_FILE = "WCNU Station Sign In/WCNU Station Sign In-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WCNU Station Sign In-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
