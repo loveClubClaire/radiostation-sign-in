@@ -39,8 +39,31 @@ class Preferences: NSObject {
             NSLog("Something realted to the saving preferences in the application support diectory went wrong")
         }
         
+        let preferencesValues = NSKeyedUnarchiver.unarchiveObjectWithFile(preferencesFilePath)
+        if preferencesValues == nil {
+            do{
+            let desktopFilepathURL = try fileManager.URLForDirectory(NSSearchPathDirectory.DesktopDirectory, inDomain: NSSearchPathDomainMask.UserDomainMask, appropriateForURL: nil, create:false)
+                signinFilepath = desktopFilepathURL.absoluteString
+                podcastFilepath = desktopFilepathURL.absoluteString
+                songLogFilepath = desktopFilepathURL.absoluteString
+                podcastDestinationFilepath = desktopFilepathURL.absoluteString
+            }
+            catch{
+                NSLog("Failed to get the desktop filepath :| Like how?")
+            }
+            
+        }
+        else{
+            //put the stored information into the vars
+        }
         
     }
+    
+    
+//    setFolderMenu(desktopFilepathURL.absoluteString, aMenu: signinMenu)
+//    setFolderMenu(desktopFilepathURL.absoluteString, aMenu: podcastDestinationMenu)
+//    setFolderMenu(desktopFilepathURL.absoluteString, aMenu: songLogMenu)
+//    setFolderMenu(desktopFilepathURL.absoluteString, aMenu: podcastLocationMenu)
     
     //place the generalPreferencesView onto the generalPreferenceWindow and change the size of the window to fit the frame. Change the title of the window as well
     @IBAction func generalPreferences(sender: AnyObject) {
