@@ -198,4 +198,8 @@ class Preferences: NSObject {
     @IBAction func cancelButton(sender: AnyObject) {
         generalPreferencesWindow.orderOut(self)
     }
+    
+    func getSigninFilepath() -> String{
+        return signinFilepath
+    }
 }

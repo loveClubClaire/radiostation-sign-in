@@ -878,6 +878,7 @@ DQ
                 <outlet property="emailTwoTextField" destination="597" id="s7Y-0n-DJp"/>
                 <outlet property="isPodcastButton" destination="574" id="cIa-Ja-xsY"/>
                 <outlet property="podcastNameTextField" destination="552" id="wg3-yO-Kr4"/>
+                <outlet property="preferencesObject" destination="it5-lR-BCB" id="66C-M9-3gb"/>
                 <outlet property="showNameTextField" destination="540" id="LeC-7e-54y"/>
                 <outlet property="stationStatusTextField" destination="560" id="Tkd-Le-8T1"/>
                 <outlet property="submit" destination="536" id="pfa-bs-Vjc"/>
