@@ -22,23 +22,25 @@ class Preferences: NSObject {
     var podcastFilepath = ""
     var songLogFilepath = ""
     var podcastDestinationFilepath = ""
+    var preferencesFilePath = ""
     
 
     override init() {
-        var fileManager
+        let fileManager = NSFileManager()
+        do{
+            let saveDataFilepathURL = try fileManager.URLForDirectory(NSSearchPathDirectory.ApplicationSupportDirectory, inDomain: NSSearchPathDomainMask.UserDomainMask, appropriateForURL: nil, create:false)
+            let saveDataFilepath = saveDataFilepathURL.path! + "/Station Sign In"
+            if fileManager.fileExistsAtPath(saveDataFilepath) == false {
+                try fileManager.createDirectoryAtPath(saveDataFilepath, withIntermediateDirectories: false, attributes: nil)
+            }
+            preferencesFilePath = saveDataFilepath + "/preferences.txt"
+        }
+        catch{
+            NSLog("Something realted to the saving preferences in the application support diectory went wrong")
+        }
+        
+        
     }
-    
-//    //Load saved preference data
-//    NSFileManager *fileManager = [[NSFileManager alloc]init];
-//    NSURL *filepath = [[NSURL alloc]init];
-//    filepath = [fileManager URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-//    NSString *stringFilepath = [filepath path];
-//    NSString *savedDataFilepath = [NSString stringWithFormat:@"%@/WCNURadio Automated Secretary",stringFilepath];
-//    if ([fileManager fileExistsAtPath:savedDataFilepath] == false) {
-//    [fileManager createDirectoryAtPath:savedDataFilepath withIntermediateDirectories:NO attributes:nil error:nil];
-//    }
-//    _preferencesFilePath = [savedDataFilepath stringByAppendingPathComponent:@"preferences.txt"];
-
     
     //place the generalPreferencesView onto the generalPreferenceWindow and change the size of the window to fit the frame. Change the title of the window as well
     @IBAction func generalPreferences(sender: AnyObject) {
