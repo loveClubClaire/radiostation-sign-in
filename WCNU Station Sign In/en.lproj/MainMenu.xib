@@ -1051,7 +1051,7 @@ DQ
             </view>
             <point key="canvasLocation" x="226.5" y="1251"/>
         </window>
-        <window title="General" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="LnT-Dy-uFk">
+        <window title="General" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="LnT-Dy-uFk">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="131" y="165" width="450" height="151"/>
@@ -1109,6 +1109,9 @@ DQ
 DQ
 </string>
                     </buttonCell>
+                    <connections>
+                        <action selector="okButton:" target="it5-lR-BCB" id="3bq-zV-m8c"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWG-QU-Pkr">
                     <rect key="frame" x="256" y="7" width="90" height="32"/>
@@ -1119,6 +1122,9 @@ DQ
 Gw
 </string>
                     </buttonCell>
+                    <connections>
+                        <action selector="cancelButton:" target="it5-lR-BCB" id="rbe-ut-n2Z"/>
+                    </connections>
                 </button>
                 <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vmh-Sq-2M8">
                     <rect key="frame" x="18" y="11" width="25" height="25"/>
@@ -1201,6 +1207,9 @@ Gw
 DQ
 </string>
                     </buttonCell>
+                    <connections>
+                        <action selector="okButton:" target="it5-lR-BCB" id="pfU-3c-vk8"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JX9-7Q-qB9">
                     <rect key="frame" x="256" y="13" width="90" height="32"/>
@@ -1211,6 +1220,9 @@ DQ
 Gw
 </string>
                     </buttonCell>
+                    <connections>
+                        <action selector="cancelButton:" target="it5-lR-BCB" id="Pzt-wM-Hik"/>
+                    </connections>
                 </button>
                 <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEz-Zg-7fA">
                     <rect key="frame" x="18" y="17" width="25" height="25"/>

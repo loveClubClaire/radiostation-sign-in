@@ -25,21 +25,10 @@ class Preferences: NSObject {
     var preferencesFilePath = ""
     
  
-    @IBAction func preferencesButton(sender: AnyObject) {
-        //Make the preferences window visable and place the generalPreferencesView into the preferences window 
-        generalPreferencesWindow.contentView = generalPreferencesView
-        generalPreferencesWindow.center()
-        generalPreferencesWindow.makeKeyAndOrderFront(self)
-        
-        //Set the pop up buttons to their respective folders
-        setFolderMenu(signinFilepath, aMenu: signinMenu)
-        setFolderMenu(podcastDestinationFilepath, aMenu: podcastDestinationMenu)
-        setFolderMenu(songLogFilepath, aMenu: songLogMenu)
-        setFolderMenu(podcastFilepath, aMenu: podcastLocationMenu)
-    }
-
+    //Initialization function for the Preferences class.
     override init() {
         let fileManager = NSFileManager()
+        //Get the filepath where the preferences saved data file is stored. Which is in Application Support. If the folder doesn't exist, then create it. Catch any resulting errors and print them to the console.
         do{
             let saveDataFilepathURL = try fileManager.URLForDirectory(NSSearchPathDirectory.ApplicationSupportDirectory, inDomain: NSSearchPathDomainMask.UserDomainMask, appropriateForURL: nil, create:false)
             let saveDataFilepath = saveDataFilepathURL.path! + "/Station Sign In"
@@ -49,13 +38,13 @@ class Preferences: NSObject {
             preferencesFilePath = saveDataFilepath + "/preferences.txt"
         }
         catch{
-            NSLog("Something realted to the saving preferences in the application support diectory went wrong")
+            NSLog("Something related to the saving preferences in the application support directory went wrong")
         }
-        
+        //Unarchive the preferences saved data file. If the resulting data is null, then set the filepaths for all the popup menus to their defaults (the desktop). Otherwise set the filepaths to their stored, unarchived, values.
         let preferencesValues = NSKeyedUnarchiver.unarchiveObjectWithFile(preferencesFilePath)
         if preferencesValues == nil {
             do{
-            let desktopFilepathURL = try fileManager.URLForDirectory(NSSearchPathDirectory.DesktopDirectory, inDomain: NSSearchPathDomainMask.UserDomainMask, appropriateForURL: nil, create:false)
+                let desktopFilepathURL = try fileManager.URLForDirectory(NSSearchPathDirectory.DesktopDirectory, inDomain: NSSearchPathDomainMask.UserDomainMask, appropriateForURL: nil, create:false)
                 signinFilepath = desktopFilepathURL.path!
                 podcastFilepath = desktopFilepathURL.path!
                 songLogFilepath = desktopFilepathURL.path!
@@ -67,13 +56,29 @@ class Preferences: NSObject {
             
         }
         else{
-            //put the stored information into the vars
+            //put the stored information into the required variables. Because we archived the information in okButton, we know the order it will be unarchived in. This is why we are able to hard code the array indices. As also need to (down?)cast preferencesValues into an NSArray cause swift.
+            let anArray = preferencesValues as! NSArray
+            signinFilepath = anArray[0] as! String
+            podcastFilepath = anArray[1] as! String
+            songLogFilepath = anArray[2] as! String
+            podcastDestinationFilepath = anArray[3] as! String
         }
         
     }
     
-    
-
+    //Called when the user presses the preferences button in the main menubar. It sets up the preferences window so that the UI presents what the user is expecting.
+    @IBAction func preferencesButton(sender: AnyObject) {
+        //Make the preferences window visible and place the generalPreferencesView into the preferences window
+        generalPreferencesWindow.contentView = generalPreferencesView
+        generalPreferencesWindow.center()
+        generalPreferencesWindow.makeKeyAndOrderFront(self)
+        
+        //Set the pop up buttons to their respective folders
+        setFolderMenu(signinFilepath, aMenu: signinMenu)
+        setFolderMenu(podcastDestinationFilepath, aMenu: podcastDestinationMenu)
+        setFolderMenu(songLogFilepath, aMenu: songLogMenu)
+        setFolderMenu(podcastFilepath, aMenu: podcastLocationMenu)
+    }
     
     //place the generalPreferencesView onto the generalPreferenceWindow and change the size of the window to fit the frame. Change the title of the window as well
     @IBAction func generalPreferences(sender: AnyObject) {
@@ -85,7 +90,6 @@ class Preferences: NSObject {
         generalPreferencesWindow.setFrame(tempFrame, display: true, animate: true)
         generalPreferencesWindow.title = "General"
     }
-    
     
     //place the posdastsPreferencesView onto the generalPreferenceWindow and change the size of the window to fit the frame. Change the title of the window as well
     @IBAction func podcastsPreferences(sender: AnyObject) {
@@ -109,7 +113,7 @@ class Preferences: NSObject {
             setFolderMenu(myPanel.URLs[0].path!, aMenu: signinMenu)
             signinFilepath = myPanel.URLs[0].path!
         }
-        //If the user cancels then make the menu have the currect directory selected, not the change filepath option selected. Its a UI thing.
+        //If the user cancels then make the menu have the current directory selected, not the change filepath option selected. Its a UI thing.
         else{
             signinMenu.performActionForItemAtIndex(0)
         }
@@ -126,7 +130,7 @@ class Preferences: NSObject {
             setFolderMenu(myPanel.URLs[0].path!, aMenu: podcastLocationMenu)
             podcastFilepath = myPanel.URLs[0].path!
         }
-            //If the user cancels then make the menu have the currect directory selected, not the change filepath option selected. Its a UI thing.
+            //If the user cancels then make the menu have the current directory selected, not the change filepath option selected. Its a UI thing.
         else{
             podcastLocationMenu.performActionForItemAtIndex(0)
         }
@@ -144,7 +148,7 @@ class Preferences: NSObject {
             setFolderMenu(myPanel.URLs[0].path!, aMenu: songLogMenu)
             songLogFilepath = myPanel.URLs[0].path!
         }
-            //If the user cancels then make the menu have the currect directory selected, not the change filepath option selected. Its a UI thing.
+            //If the user cancels then make the menu have the current directory selected, not the change filepath option selected. Its a UI thing.
         else{
             songLogMenu.performActionForItemAtIndex(0)
         }
@@ -161,7 +165,7 @@ class Preferences: NSObject {
             setFolderMenu(myPanel.URLs[0].path!, aMenu: podcastDestinationMenu)
             podcastDestinationFilepath = myPanel.URLs[0].path!
         }
-            //If the user cancels then make the menu have the currect directory selected, not the change filepath option selected. Its a UI thing.
+            //If the user cancels then make the menu have the current directory selected, not the change filepath option selected. Its a UI thing.
         else{
             podcastDestinationMenu.performActionForItemAtIndex(0)
         }
@@ -181,5 +185,17 @@ class Preferences: NSObject {
         aMenu.performActionForItemAtIndex(0)
     }
     
+    //Dismiss the window and save the preferences values to a file in Application Support (the preferencesFilePath)
+    @IBAction func okButton(sender: AnyObject) {
+        generalPreferencesWindow.orderOut(self)
+        let preferencesInformation = [signinFilepath,podcastFilepath,songLogFilepath,podcastDestinationFilepath]
+        NSKeyedArchiver.archiveRootObject(preferencesInformation, toFile: preferencesFilePath)
+        
+
+    }
     
+    //Dismiss the window without saving any of the users preferences
+    @IBAction func cancelButton(sender: AnyObject) {
+        generalPreferencesWindow.orderOut(self)
+    }
 }
