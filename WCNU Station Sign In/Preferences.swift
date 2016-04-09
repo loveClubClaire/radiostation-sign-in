@@ -10,8 +10,19 @@ import Foundation
 import Cocoa
 
 class Preferences: NSObject {
+    @IBOutlet weak var generalPreferencesWindow: NSWindow!
+    @IBOutlet weak var podcastsPreferencesView: NSView!
+    @IBOutlet weak var generalPreferencesView: NSView!
+
     
-    @IBOutlet weak var generalPreferences: NSToolbarItem!
-    @IBOutlet weak var podcastsPreferences: NSToolbarItem!
+    
+    @IBAction func generalPreferences(sender: AnyObject) {
+        generalPreferencesWindow.contentView = generalPreferencesView
+    }
+    
+    
+    @IBAction func podcastsPreferences(sender: AnyObject) {
+        generalPreferencesWindow.contentView = podcastsPreferencesView
+    }
     
 }

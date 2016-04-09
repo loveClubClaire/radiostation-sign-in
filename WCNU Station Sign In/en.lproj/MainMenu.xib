@@ -854,7 +854,10 @@ DQ
         <customObject id="it5-lR-BCB" customClass="Preferences" customModule="WCNU_Station_Sign_In" customModuleProvider="target">
             <connections>
                 <outlet property="generalPreferences" destination="hDz-24-xgN" id="Yxy-yN-Zxd"/>
-                <outlet property="podcastsPreferences" destination="uAt-5T-XSF" id="1LY-oP-fNv"/>
+                <outlet property="generalPreferencesView" destination="R1C-id-fLt" id="Lin-Al-fBj"/>
+                <outlet property="generalPreferencesWindow" destination="LnT-Dy-uFk" id="dy1-2d-j5D"/>
+                <outlet property="podcastsPreferences" destination="uAt-5T-XSF" id="HKl-xV-EFE"/>
+                <outlet property="podcastsPreferencesView" destination="tiC-VR-Rz2" id="atK-cD-4L8"/>
             </connections>
         </customObject>
         <customObject id="KlH-cd-umc" customClass="MasterController" customModule="WCNU_Station_Sign_In" customModuleProvider="target">
@@ -1038,7 +1041,7 @@ DQ
             </view>
             <point key="canvasLocation" x="226.5" y="1251"/>
         </window>
-        <window title="PreferenceWindow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="LnT-Dy-uFk">
+        <window title="PreferenceWindow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="LnT-Dy-uFk">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="131" y="165" width="450" height="151"/>
@@ -1135,10 +1138,18 @@ Gw
                     <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="zXh-LS-vwf"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="TVb-Em-g25"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="DpJ-Uw-ioo"/>
-                    <toolbarItem implicitItemIdentifier="9E1B1A80-6C9F-4A11-9897-BA19D4A3188C" label="General" paletteLabel="General" tag="-1" image="NSPreferencesGeneral" id="hDz-24-xgN"/>
+                    <toolbarItem implicitItemIdentifier="9E1B1A80-6C9F-4A11-9897-BA19D4A3188C" label="General" paletteLabel="General" tag="-1" image="NSPreferencesGeneral" id="hDz-24-xgN">
+                        <connections>
+                            <action selector="generalPreferences:" target="it5-lR-BCB" id="iVD-5C-PPx"/>
+                        </connections>
+                    </toolbarItem>
                     <toolbarItem implicitItemIdentifier="D4492FF0-A7F0-4DFB-8A40-20FDFC2371CC" label="Accounts" paletteLabel="Accounts" tag="-1" image="NSUserAccounts" id="dda-eP-X87"/>
                     <toolbarItem implicitItemIdentifier="0D0284D9-B6F1-4F99-B64D-D6B42B13B449" label="Users" paletteLabel="Users" tag="-1" image="NSUserGroup" id="bai-kK-AVf"/>
-                    <toolbarItem implicitItemIdentifier="CC0E41A1-3F3B-4083-8B41-1126B83799D1" label="Podcasts" paletteLabel="Podcasts" tag="-1" image="Apple_Podcast_logo" id="uAt-5T-XSF"/>
+                    <toolbarItem implicitItemIdentifier="CC0E41A1-3F3B-4083-8B41-1126B83799D1" label="Podcasts" paletteLabel="Podcasts" tag="-1" image="Apple_Podcast_logo" id="uAt-5T-XSF">
+                        <connections>
+                            <action selector="podcastsPreferences:" target="it5-lR-BCB" id="Jqn-SI-3TE"/>
+                        </connections>
+                    </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="hDz-24-xgN"/>
@@ -1148,98 +1159,174 @@ Gw
             </toolbar>
             <point key="canvasLocation" x="-205" y="-179.5"/>
         </window>
-        <window title="PreferenceWindow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="YKm-lv-mEP">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="131" y="165" width="450" height="145"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-            <value key="minSize" type="size" width="450" height="410"/>
-            <value key="maxSize" type="size" width="450" height="410"/>
-            <view key="contentView" id="V3u-jj-0D9">
-                <rect key="frame" x="0.0" y="0.0" width="450" height="145"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="QiV-NR-CLq">
-                        <rect key="frame" x="-10" y="56" width="504" height="5"/>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" metaFont="system"/>
-                    </box>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSK-3f-MZm">
-                        <rect key="frame" x="356" y="13" width="90" height="32"/>
-                        <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Zxd-9V-uSC">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <string key="keyEquivalent" base64-UTF8="YES">
+        <view id="tiC-VR-Rz2">
+            <rect key="frame" x="0.0" y="0.0" width="450" height="145"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="53I-FU-dWi">
+                    <rect key="frame" x="-10" y="56" width="504" height="5"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8qO-4I-Ybm">
+                    <rect key="frame" x="356" y="13" width="90" height="32"/>
+                    <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tzL-ez-Y7k">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
-                        </buttonCell>
-                    </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a3G-hi-W6z">
-                        <rect key="frame" x="266" y="13" width="90" height="32"/>
-                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2is-fR-hXv">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <string key="keyEquivalent" base64-UTF8="YES">
+                    </buttonCell>
+                </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QBf-lx-ayF">
+                    <rect key="frame" x="266" y="13" width="90" height="32"/>
+                    <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IwP-8h-wka">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent" base64-UTF8="YES">
 Gw
 </string>
-                        </buttonCell>
-                    </button>
-                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eaz-u7-5Yu">
-                        <rect key="frame" x="8" y="17" width="25" height="25"/>
-                        <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="goU-60-a1W">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                    </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UFr-CZ-yPT">
-                        <rect key="frame" x="43" y="112" width="155" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Podcast Locaiton Folder:" id="Xy0-iI-vbI">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jP2-B7-CIn">
-                        <rect key="frame" x="198" y="105" width="235" height="26"/>
-                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="8LM-vD-Lpw" id="M4t-92-xsb">
-                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="menu"/>
-                            <menu key="menu" id="goV-JX-Wc7">
-                                <items>
-                                    <menuItem title="Item 1" state="on" id="8LM-vD-Lpw"/>
-                                    <menuItem isSeparatorItem="YES" id="m2Y-6z-AEo"/>
-                                    <menuItem title="Other..." id="9jT-gB-mqi"/>
-                                </items>
-                            </menu>
-                        </popUpButtonCell>
-                    </popUpButton>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bVh-O9-T6E">
-                        <rect key="frame" x="26" y="71" width="172" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Podcast Destination Folder:" id="BZI-WZ-9uU">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IbD-rI-dct">
-                        <rect key="frame" x="198" y="64" width="235" height="26"/>
-                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="wgQ-vH-1gO" id="1OR-Dh-k9A">
-                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="menu"/>
-                            <menu key="menu" id="BXF-fp-qbg">
-                                <items>
-                                    <menuItem title="Item 1" state="on" id="wgQ-vH-1gO"/>
-                                    <menuItem isSeparatorItem="YES" id="eP9-D3-aLs"/>
-                                    <menuItem title="Other..." id="sfw-yh-4ex"/>
-                                </items>
-                            </menu>
-                        </popUpButtonCell>
-                    </popUpButton>
-                </subviews>
-            </view>
-            <point key="canvasLocation" x="-205" y="35.5"/>
-        </window>
+                    </buttonCell>
+                </button>
+                <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l0S-RS-6Y9">
+                    <rect key="frame" x="8" y="17" width="25" height="25"/>
+                    <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Fv8-5o-UJZ">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kM9-9h-Dor">
+                    <rect key="frame" x="43" y="112" width="155" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Podcast Locaiton Folder:" id="rIA-M5-naC">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fp3-0c-Cn5">
+                    <rect key="frame" x="198" y="105" width="235" height="26"/>
+                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="udU-Qk-YNx" id="rd4-pB-Z8g">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="FO0-Ze-Uky">
+                            <items>
+                                <menuItem title="Item 1" state="on" id="udU-Qk-YNx"/>
+                                <menuItem isSeparatorItem="YES" id="x5p-In-grs"/>
+                                <menuItem title="Other..." id="bmx-l3-hAn"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="571-CE-xhY">
+                    <rect key="frame" x="26" y="71" width="172" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Podcast Destination Folder:" id="Tbc-9R-PPa">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEA-2A-hv2">
+                    <rect key="frame" x="198" y="64" width="235" height="26"/>
+                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="hjP-Lc-kaY" id="IJZ-wx-A6a">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="kiv-mB-laG">
+                            <items>
+                                <menuItem title="Item 1" state="on" id="hjP-Lc-kaY"/>
+                                <menuItem isSeparatorItem="YES" id="VvF-Yz-A02"/>
+                                <menuItem title="Other..." id="pUb-zB-iYq"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+            </subviews>
+            <point key="canvasLocation" x="358" y="52.5"/>
+        </view>
+        <view id="R1C-id-fLt">
+            <rect key="frame" x="0.0" y="0.0" width="450" height="151"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="VYc-Ec-giV">
+                    <rect key="frame" x="-14" y="56" width="504" height="5"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bpo-N5-n7K">
+                    <rect key="frame" x="346" y="13" width="90" height="32"/>
+                    <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hku-hs-j0G">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                    </buttonCell>
+                </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JX9-7Q-qB9">
+                    <rect key="frame" x="256" y="13" width="90" height="32"/>
+                    <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="faM-kP-GZW">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                    </buttonCell>
+                </button>
+                <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEz-Zg-7fA">
+                    <rect key="frame" x="18" y="17" width="25" height="25"/>
+                    <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="owa-cc-Om3">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Udp-rA-aw2">
+                    <rect key="frame" x="43" y="114" width="124" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sign in Logs Folder:" id="e35-Nt-xtC">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVj-qt-KGw">
+                    <rect key="frame" x="171" y="107" width="235" height="26"/>
+                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="hsN-Wf-60b" id="vLE-5m-uCM">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="zI9-Ln-gfe">
+                            <items>
+                                <menuItem title="Item 1" state="on" id="hsN-Wf-60b"/>
+                                <menuItem isSeparatorItem="YES" id="aam-J9-kCo"/>
+                                <menuItem title="Other..." id="KCt-uz-lZU"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1dD-mt-jgW">
+                    <rect key="frame" x="171" y="66" width="235" height="26"/>
+                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="czw-c0-d7y" id="UZi-Ug-skX">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="AUW-US-Pdz">
+                            <items>
+                                <menuItem title="Item 1" state="on" id="czw-c0-d7y"/>
+                                <menuItem isSeparatorItem="YES" id="Mt2-6N-FB4"/>
+                                <menuItem title="Other..." id="UDh-T9-4oc"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MRq-qw-sBj">
+                    <rect key="frame" x="60" y="73" width="107" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Song Log Folder:" id="SbV-Xj-guY">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <point key="canvasLocation" x="358" y="-199.5"/>
+        </view>
     </objects>
     <resources>
         <image name="Apple_Podcast_logo" width="320.760009765625" height="320.760009765625"/>
