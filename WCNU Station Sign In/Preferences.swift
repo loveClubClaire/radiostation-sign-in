@@ -137,12 +137,13 @@ class Preferences: NSObject {
 
     }
     
-    //When the user requests to change the location of the song log folder this function is called. It spawns a file selector panel which can only select a single directory. If the user selects a directory, setFolderMenu is called to update the menu item so that it shows the new directory.
+    //When the user requests to change the location of the song log this function is called. (Name is wrong cause I'm lazy sorry) It spawns a file selector panel which can only select a single file of type txt or log. If the user selects a file, setFolderMenu is called to update the menu item so that it shows the new file.
     @IBAction func getSongLogFolder(sender: AnyObject) {
         let myPanel = NSOpenPanel()
         myPanel.allowsMultipleSelection = false
-        myPanel.canChooseDirectories = true
-        myPanel.canChooseFiles = false;
+        myPanel.canChooseDirectories = false
+        myPanel.canChooseFiles = true;
+        myPanel.allowedFileTypes = ["txt","log"]
         //If user confirms then call songLogMenu to update the menu object and update the filepath by setting the songLogFilepath variable
         if myPanel.runModal() == NSModalResponseOK {
             setFolderMenu(myPanel.URLs[0].path!, aMenu: songLogMenu)
@@ -201,5 +202,9 @@ class Preferences: NSObject {
     
     func getSigninFilepath() -> String{
         return signinFilepath
+    }
+    
+    func getSongLogFilepath() -> String{
+        return songLogFilepath
     }
 }

@@ -18,17 +18,17 @@ class MasterController: NSObject{
     @IBOutlet weak var podcastNameTextField: NSTextField!
     @IBOutlet weak var isPodcastButton: NSButton!
     @IBOutlet weak var preferencesObject: Preferences!
+    @IBOutlet weak var podcastInformationWindow: NSWindow!
+    @IBOutlet weak var firstPlayedSongMenu: NSPopUpButtonCell!
+    @IBOutlet weak var lastPlayedSongMenu: NSPopUpButtonCell!
     
-    
-
-    @IBAction func submit(sender: AnyObject) {
+    func submit(podcastInformation: String){
         //Get the values of the binded text fields and buttons and store them into variables
         var showName = showNameTextField.stringValue
         var emailOne = emailOneTextField.stringValue
         var emailTwo = emailTwoTextField.stringValue
         var stationStatus = stationStatusTextField.stringValue
         var podcastName = podcastNameTextField.stringValue
-        let isPodcast = isPodcastButton.state
         
         //Replace any empty string with "NULL". This is done for legacy reasons. And I believe that reason is to make the resulting string easier to parse. I never said it was a good reason.
         if showName == "" {
@@ -51,9 +51,8 @@ class MasterController: NSObject{
         var csv = showName + "<delim>" + emailOne + "<delim>" + emailTwo + "<delim>" + stationStatus + "<delim>" + podcastName
         
         //If we are handling podcasts, call the get podcast information function
-        if isPodcast == NSOnState {
-            //Call get podcast information function
-        }
+        csv += podcastInformation
+        
         
         //Write the resulting csv string to a file
         csv += "\n\n"
@@ -67,13 +66,51 @@ class MasterController: NSObject{
         myAlert.alertStyle = NSAlertStyle.InformationalAlertStyle
         myAlert.runModal()
         
-        //reset the values of the binded text fields and button 
+        //reset the values of the binded text fields and button
         showNameTextField.stringValue = ""
         emailOneTextField.stringValue = ""
         emailTwoTextField.stringValue = ""
         stationStatusTextField.stringValue = ""
         podcastNameTextField.stringValue = ""
         isPodcastButton.state = NSOffState
+
+    }
+
+    @IBAction func submitButtonClicked(sender: AnyObject) {
+        let isPodcast = isPodcastButton.state
+        //If we are handling podcasts, call submitWithPodcast, otherwise, just call submit directly.
+        if isPodcast == NSOnState {
+            submitWithPodcast()
+        }
+        else{
+            submit("")
+        }
+    }
+    
+    func submitWithPodcast(){
+        //Get the song log and convert it into an array of strings
+        var songLogArray = [String]()
+        do{
+            let songLog = try String.init(contentsOfFile:preferencesObject.getSongLogFilepath())
+            songLogArray = songLog.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
+            if songLogArray[songLogArray.count-1] == "" {
+                songLogArray.removeAtIndex(songLogArray.count-1)
+            }
+        }
+        catch{
+            
+        }
+        //Place the first and last of the songlogArray into the first and last played song menu and select the first and last to be displayed respectivally.
+        firstPlayedSongMenu.removeAllItems()
+        firstPlayedSongMenu.addItemsWithTitles(songLogArray)
+        lastPlayedSongMenu.removeAllItems()
+        lastPlayedSongMenu.addItemsWithTitles(songLogArray)
+        firstPlayedSongMenu.selectItemAtIndex(0)
+        lastPlayedSongMenu.selectItemAtIndex(songLogArray.count - 1)
+        
+        //Make the podcast information window centered and visible
+        podcastInformationWindow.center()
+        podcastInformationWindow.makeKeyAndOrderFront(self)
     }
     
     func writeToAttendanceFile(signIn: String){
