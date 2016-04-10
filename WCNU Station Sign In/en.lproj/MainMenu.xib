@@ -750,28 +750,21 @@ DQ
                 <outlet property="textFieldThree" destination="597" id="780"/>
                 <outlet property="textFieldTwo" destination="546" id="593"/>
                 <outlet property="thirdWindow" destination="L81-jj-26e" id="bbc-KQ-yol"/>
-                <outlet property="window" destination="371" id="532"/>
             </connections>
         </customObject>
         <customObject id="it5-lR-BCB" customClass="Preferences" customModule="WCNU_Station_Sign_In" customModuleProvider="target">
             <connections>
-                <outlet property="generalPreferences" destination="hDz-24-xgN" id="Yxy-yN-Zxd"/>
                 <outlet property="generalPreferencesView" destination="R1C-id-fLt" id="Lin-Al-fBj"/>
                 <outlet property="generalPreferencesWindow" destination="LnT-Dy-uFk" id="dy1-2d-j5D"/>
-                <outlet property="getPodcastDestinationFolder" destination="daO-0W-hRZ" id="91R-U0-v8L"/>
                 <outlet property="podcastDestinationMenu" destination="TQ4-F6-n6s" id="cuw-K7-FDY"/>
                 <outlet property="podcastLocationMenu" destination="tTY-fo-asB" id="vgd-d5-hcc"/>
-                <outlet property="podcastsPreferences" destination="uAt-5T-XSF" id="HKl-xV-EFE"/>
                 <outlet property="podcastsPreferencesView" destination="tiC-VR-Rz2" id="atK-cD-4L8"/>
-                <outlet property="preferencesButton" destination="129" id="xmg-NM-Q3Z"/>
                 <outlet property="signinMenu" destination="zI9-Ln-gfe" id="lGz-DH-pBE"/>
                 <outlet property="songLogMenu" destination="AUW-US-Pdz" id="GYZ-rY-Ej7"/>
             </connections>
         </customObject>
         <customObject id="KlH-cd-umc" customClass="MasterController" customModule="WCNU_Station_Sign_In" customModuleProvider="target">
             <connections>
-                <outlet property="d" destination="561" id="Jdn-8Y-ZOX"/>
-                <outlet property="eMailOneTextField" destination="547" id="tef-em-pG8"/>
                 <outlet property="emailOneTextField" destination="546" id="k00-dl-2sv"/>
                 <outlet property="emailTwoTextField" destination="597" id="s7Y-0n-DJp"/>
                 <outlet property="firstPlayedSongMenu" destination="3to-YQ-Gcj" id="nUD-Rn-Vgq"/>
@@ -780,11 +773,9 @@ DQ
                 <outlet property="podcastInformationWindow" destination="L81-jj-26e" id="kZW-rs-fYN"/>
                 <outlet property="podcastNameTextField" destination="552" id="wg3-yO-Kr4"/>
                 <outlet property="preferencesObject" destination="it5-lR-BCB" id="66C-M9-3gb"/>
-                <outlet property="s" destination="3to-YQ-Gcj" id="dqG-YR-RRv"/>
                 <outlet property="showDescriptionTextField" destination="gbz-Uc-j5b" id="G01-Wh-jL3"/>
                 <outlet property="showNameTextField" destination="540" id="LeC-7e-54y"/>
                 <outlet property="stationStatusTextField" destination="560" id="Tkd-Le-8T1"/>
-                <outlet property="submit" destination="536" id="pfa-bs-Vjc"/>
                 <outlet property="tagsTextField" destination="3K5-Vf-Wd5" id="j9z-2f-aBa"/>
             </connections>
         </customObject>
@@ -1029,14 +1020,14 @@ Gw
                 </button>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Veu-mV-O4x">
                     <rect key="frame" x="214" y="58" width="200" height="26"/>
-                    <popUpButtonCell key="cell" type="push" title="Other..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="daO-0W-hRZ" id="lkD-pI-d55">
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="lkD-pI-d55">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="TQ4-F6-n6s">
                             <items>
                                 <menuItem title="Item 1" id="Cya-18-3P6"/>
                                 <menuItem isSeparatorItem="YES" id="H5n-8o-bdl"/>
-                                <menuItem title="Other..." state="on" id="daO-0W-hRZ">
+                                <menuItem title="Other..." id="daO-0W-hRZ">
                                     <connections>
                                         <action selector="getPodcastDestinationFolder:" target="it5-lR-BCB" id="f11-MP-Psb"/>
                                     </connections>
