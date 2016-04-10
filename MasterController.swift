@@ -108,9 +108,10 @@ class MasterController: NSObject{
         firstPlayedSongMenu.selectItemAtIndex(0)
         lastPlayedSongMenu.selectItemAtIndex(songLogArray.count - 1)
         
-        //Make the podcast information window centered and visible
+        //Make the podcast information window centered and visible and make any other visable windows unclickable using the NSApp function
         podcastInformationWindow.center()
         podcastInformationWindow.makeKeyAndOrderFront(self)
+        NSApp.runModalForWindow(podcastInformationWindow)
     }
     
     func writeToAttendanceFile(signIn: String){
