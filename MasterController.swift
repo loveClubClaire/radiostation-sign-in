@@ -21,6 +21,8 @@ class MasterController: NSObject{
     @IBOutlet weak var podcastInformationWindow: NSWindow!
     @IBOutlet weak var firstPlayedSongMenu: NSPopUpButtonCell!
     @IBOutlet weak var lastPlayedSongMenu: NSPopUpButtonCell!
+    @IBOutlet weak var tagsTextField: NSTextField!
+    @IBOutlet weak var showDescriptionTextField: NSTextField!
     
     func submit(podcastInformation: String){
         //Get the values of the binded text fields and buttons and store them into variables
@@ -98,7 +100,7 @@ class MasterController: NSObject{
             }
         }
         catch{
-            
+            NSLog("submitWithPodcast function do block failure. Its open source, find out about it yourself :/")
         }
         //Place the first and last of the songlogArray into the first and last played song menu and select the first and last to be displayed respectivally.
         firstPlayedSongMenu.removeAllItems()
@@ -137,5 +139,26 @@ class MasterController: NSObject{
             fileHandle?.writeData(textData!)
             fileHandle?.closeFile()
         }
+    }
+    
+    @IBAction func podcastInformationOk(sender: AnyObject) {
+        if lastPlayedSongMenu.indexOfSelectedItem <= firstPlayedSongMenu.indexOfSelectedItem  {
+            //Frist song before the last song pls, U R not a wizard
+        }
+        else{
+            var allSongs = ""
+            for index in firstPlayedSongMenu.indexOfSelectedItem...lastPlayedSongMenu.indexOfSelectedItem{
+                allSongs += "<delim>" + firstPlayedSongMenu.itemTitles[index]
+            }
+            let podcastInformation = "<delim>" + tagsTextField.stringValue + "<delim>" + showDescriptionTextField.stringValue + allSongs
+            submit(podcastInformation)
+        }
+    }
+    //Cancel's the action of creating a podcast. Dissmisses the podcast information window and resets it to its defaults. The state of the main sign in window is unchanged. The first and last song pop up menus don't need to be reset because they will be reconfigured when the window is called again.
+    @IBAction func podcastInformationCancel(sender: AnyObject) {
+        NSApp.stopModal()
+        podcastInformationWindow.orderOut(self)
+        tagsTextField.stringValue = ""
+        showDescriptionTextField.stringValue = ""
     }
 }

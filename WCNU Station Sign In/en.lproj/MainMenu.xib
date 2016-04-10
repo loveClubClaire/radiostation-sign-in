@@ -881,9 +881,11 @@ DQ
                 <outlet property="podcastNameTextField" destination="552" id="wg3-yO-Kr4"/>
                 <outlet property="preferencesObject" destination="it5-lR-BCB" id="66C-M9-3gb"/>
                 <outlet property="s" destination="3to-YQ-Gcj" id="dqG-YR-RRv"/>
+                <outlet property="showDescriptionTextField" destination="gbz-Uc-j5b" id="G01-Wh-jL3"/>
                 <outlet property="showNameTextField" destination="540" id="LeC-7e-54y"/>
                 <outlet property="stationStatusTextField" destination="560" id="Tkd-Le-8T1"/>
                 <outlet property="submit" destination="536" id="pfa-bs-Vjc"/>
+                <outlet property="tagsTextField" destination="3K5-Vf-Wd5" id="j9z-2f-aBa"/>
             </connections>
         </customObject>
         <customObject id="420" customClass="NSFontManager"/>
@@ -973,7 +975,7 @@ DQ
 </string>
                         </buttonCell>
                         <connections>
-                            <action selector="closeInfoWindow:" target="494" id="y58-ZC-Wcq"/>
+                            <action selector="podcastInformationOk:" target="KlH-cd-umc" id="dgs-rJ-8F8"/>
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="gbz-Uc-j5b">
@@ -1034,7 +1036,7 @@ Gw
 </string>
                         </buttonCell>
                         <connections>
-                            <action selector="cancelButton:" target="it5-lR-BCB" id="k2X-Ai-Ys5"/>
+                            <action selector="podcastInformationCancel:" target="KlH-cd-umc" id="79c-ax-sKc"/>
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IbS-wM-drv">

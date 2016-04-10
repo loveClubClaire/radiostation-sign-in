@@ -191,8 +191,6 @@ class Preferences: NSObject {
         generalPreferencesWindow.orderOut(self)
         let preferencesInformation = [signinFilepath,podcastFilepath,songLogFilepath,podcastDestinationFilepath]
         NSKeyedArchiver.archiveRootObject(preferencesInformation, toFile: preferencesFilePath)
-        
-
     }
     
     //Dismiss the window without saving any of the users preferences
