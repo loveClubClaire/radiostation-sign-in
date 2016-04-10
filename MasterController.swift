@@ -185,6 +185,7 @@ class MasterController: NSObject{
            
         }
     }
+    
     //Cancel's the action of creating a podcast. Dissmisses the podcast information window and resets it to its defaults. The state of the main sign in window is unchanged. The first and last song pop up menus don't need to be reset because they will be reconfigured when the window is called again.
     @IBAction func podcastInformationCancel(sender: AnyObject) {
         NSApp.stopModal()

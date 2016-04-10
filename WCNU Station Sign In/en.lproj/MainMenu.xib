@@ -67,84 +67,6 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="File" id="83">
-                    <menu key="submenu" title="File" id="81">
-                        <items>
-                            <menuItem title="New" keyEquivalent="n" id="82">
-                                <connections>
-                                    <action selector="newDocument:" target="-1" id="373"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Change Text File Path…" keyEquivalent="o" id="72">
-                                <connections>
-                                    <action selector="changeTxtFileURL:" target="494" id="773"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Change Podcast Origin Path" id="784">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="changePodcastOriginURL:" target="494" id="788"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Change Podcast Destination Path" id="786">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="changePodcastFinalURL:" target="494" id="789"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Change Song Log Path" id="838">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="songLogURL:" target="494" id="840"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Open Recent" id="124">
-                                <menu key="submenu" title="Open Recent" systemMenu="recentDocuments" id="125">
-                                    <items>
-                                        <menuItem title="Clear Menu" id="126">
-                                            <connections>
-                                                <action selector="clearRecentDocuments:" target="-1" id="127"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="79">
-                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
-                            </menuItem>
-                            <menuItem title="Close" keyEquivalent="w" id="73">
-                                <connections>
-                                    <action selector="performClose:" target="-1" id="193"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Save…" keyEquivalent="s" id="75">
-                                <connections>
-                                    <action selector="saveDocument:" target="-1" id="362"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Revert to Saved" id="112">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="revertDocumentToSaved:" target="-1" id="364"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="74">
-                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
-                            </menuItem>
-                            <menuItem title="Page Setup..." keyEquivalent="P" id="77">
-                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
-                                <connections>
-                                    <action selector="runPageLayout:" target="-1" id="87"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Print…" keyEquivalent="p" id="78">
-                                <connections>
-                                    <action selector="print:" target="-1" id="86"/>
-                                </connections>
-                            </menuItem>
-                        </items>
-                    </menu>
-                </menuItem>
                 <menuItem title="Edit" id="217">
                     <menu key="submenu" title="Edit" id="205">
                         <items>
@@ -614,23 +536,6 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="View" id="295">
-                    <menu key="submenu" title="View" id="296">
-                        <items>
-                            <menuItem title="Show Toolbar" keyEquivalent="t" id="297">
-                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
-                                <connections>
-                                    <action selector="toggleToolbarShown:" target="-1" id="366"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Customize Toolbar…" id="298">
-                                <connections>
-                                    <action selector="runToolbarCustomizationPalette:" target="-1" id="365"/>
-                                </connections>
-                            </menuItem>
-                        </items>
-                    </menu>
-                </menuItem>
                 <menuItem title="Window" id="19">
                     <menu key="submenu" title="Window" systemMenu="window" id="24">
                         <items>
@@ -674,8 +579,8 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="1076" y="50" width="290" height="452"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-            <value key="minSize" type="size" width="323" height="498"/>
-            <value key="maxSize" type="size" width="323" height="498"/>
+            <value key="minSize" type="size" width="290" height="452"/>
+            <value key="maxSize" type="size" width="290" height="452"/>
             <view key="contentView" id="372">
                 <rect key="frame" x="0.0" y="0.0" width="290" height="452"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -794,9 +699,6 @@ DQ
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
-                        <connections>
-                            <action selector="getButtonValue:" target="494" id="783"/>
-                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -839,7 +741,6 @@ DQ
         <customObject id="494" customClass="AppDelegate">
             <connections>
                 <outlet property="WCNUWindow" destination="371" id="900"/>
-                <outlet property="extraWindow" destination="843" id="858"/>
                 <outlet property="podcastButton" destination="574" id="Wyx-G6-rqP"/>
                 <outlet property="textBoxOne" destination="560" id="594"/>
                 <outlet property="textBoxTwo" destination="gbz-Uc-j5b" id="8bg-a6-cuV"/>
@@ -850,7 +751,6 @@ DQ
                 <outlet property="textFieldTwo" destination="546" id="593"/>
                 <outlet property="thirdWindow" destination="L81-jj-26e" id="bbc-KQ-yol"/>
                 <outlet property="window" destination="371" id="532"/>
-                <outlet property="windowButton" destination="854" id="898"/>
             </connections>
         </customObject>
         <customObject id="it5-lR-BCB" customClass="Preferences" customModule="WCNU_Station_Sign_In" customModuleProvider="target">
@@ -889,48 +789,12 @@ DQ
             </connections>
         </customObject>
         <customObject id="420" customClass="NSFontManager"/>
-        <window title="Songs" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="843">
-            <windowStyleMask key="styleMask" titled="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="594" y="340" width="348" height="228"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-            <value key="minSize" type="size" width="348" height="228"/>
-            <value key="maxSize" type="size" width="348" height="228"/>
-            <view key="contentView" id="844">
-                <rect key="frame" x="0.0" y="0.0" width="348" height="228"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="854">
-                        <rect key="frame" x="133" y="13" width="82" height="32"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="70" id="906"/>
-                        </constraints>
-                        <buttonCell key="cell" type="push" title="Ok!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="855">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <string key="keyEquivalent" base64-UTF8="YES">
-DQ
-</string>
-                        </buttonCell>
-                        <connections>
-                            <action selector="closeWindow:" target="494" id="899"/>
-                        </connections>
-                    </button>
-                </subviews>
-                <constraints>
-                    <constraint firstAttribute="bottom" secondItem="854" secondAttribute="bottom" constant="20" symbolic="YES" id="945"/>
-                    <constraint firstItem="854" firstAttribute="centerX" secondItem="844" secondAttribute="centerX" id="lOs-AG-WLt"/>
-                </constraints>
-            </view>
-            <point key="canvasLocation" x="543" y="659"/>
-        </window>
         <window title="Podcast Information" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="L81-jj-26e">
             <windowStyleMask key="styleMask" titled="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="594" y="340" width="365" height="397"/>
+            <rect key="contentRect" x="967" y="379" width="365" height="397"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-            <value key="minSize" type="size" width="365" height="278"/>
-            <value key="maxSize" type="size" width="365" height="278"/>
+            <value key="minSize" type="size" width="365" height="397"/>
+            <value key="maxSize" type="size" width="365" height="397"/>
             <view key="contentView" id="gc0-QQ-Hul">
                 <rect key="frame" x="0.0" y="0.0" width="365" height="397"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -1163,24 +1027,8 @@ Gw
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kM9-9h-Dor">
-                    <rect key="frame" x="52" y="67" width="155" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Podcast Locaiton Folder:" id="rIA-M5-naC">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="571-CE-xhY">
-                    <rect key="frame" x="35" y="108" width="172" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Podcast Destination Folder:" id="Tbc-9R-PPa">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Veu-mV-O4x">
-                    <rect key="frame" x="211" y="101" width="205" height="26"/>
+                    <rect key="frame" x="214" y="58" width="200" height="26"/>
                     <popUpButtonCell key="cell" type="push" title="Other..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="daO-0W-hRZ" id="lkD-pI-d55">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -1198,7 +1046,7 @@ Gw
                     </popUpButtonCell>
                 </popUpButton>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jUA-3L-75G">
-                    <rect key="frame" x="211" y="60" width="205" height="26"/>
+                    <rect key="frame" x="214" y="100" width="200" height="26"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="ODe-xg-Drv">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -1215,21 +1063,37 @@ Gw
                         </menu>
                     </popUpButtonCell>
                 </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kM9-9h-Dor">
+                    <rect key="frame" x="55" y="107" width="155" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Podcast Locaiton Folder:" id="rIA-M5-naC">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="571-CE-xhY">
+                    <rect key="frame" x="38" y="65" width="172" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Podcast Destination Folder:" id="Tbc-9R-PPa">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <point key="canvasLocation" x="358" y="-18.5"/>
         </view>
         <view id="R1C-id-fLt">
-            <rect key="frame" x="0.0" y="0.0" width="450" height="151"/>
+            <rect key="frame" x="0.0" y="0.0" width="450" height="145"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="VYc-Ec-giV">
-                    <rect key="frame" x="-14" y="56" width="504" height="5"/>
+                    <rect key="frame" x="-14" y="50" width="504" height="5"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bpo-N5-n7K">
-                    <rect key="frame" x="346" y="13" width="90" height="32"/>
+                    <rect key="frame" x="346" y="7" width="90" height="32"/>
                     <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hku-hs-j0G">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -1242,7 +1106,7 @@ DQ
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JX9-7Q-qB9">
-                    <rect key="frame" x="256" y="13" width="90" height="32"/>
+                    <rect key="frame" x="256" y="7" width="90" height="32"/>
                     <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="faM-kP-GZW">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -1255,22 +1119,14 @@ Gw
                     </connections>
                 </button>
                 <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEz-Zg-7fA">
-                    <rect key="frame" x="18" y="17" width="25" height="25"/>
+                    <rect key="frame" x="18" y="11" width="25" height="25"/>
                     <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="owa-cc-Om3">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Udp-rA-aw2">
-                    <rect key="frame" x="44" y="114" width="124" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sign in Logs Folder:" id="e35-Nt-xtC">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVj-qt-KGw">
-                    <rect key="frame" x="172" y="107" width="235" height="26"/>
+                    <rect key="frame" x="166" y="100" width="248" height="26"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="vLE-5m-uCM">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -1288,7 +1144,7 @@ Gw
                     </popUpButtonCell>
                 </popUpButton>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1dD-mt-jgW">
-                    <rect key="frame" x="172" y="66" width="235" height="26"/>
+                    <rect key="frame" x="166" y="58" width="248" height="26"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="UZi-Ug-skX">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -1305,8 +1161,16 @@ Gw
                         </menu>
                     </popUpButtonCell>
                 </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Udp-rA-aw2">
+                    <rect key="frame" x="38" y="107" width="124" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sign in Logs Folder:" id="e35-Nt-xtC">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MRq-qw-sBj">
-                    <rect key="frame" x="103" y="73" width="65" height="17"/>
+                    <rect key="frame" x="97" y="66" width="65" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Song Log:" id="SbV-Xj-guY">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
