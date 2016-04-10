@@ -141,17 +141,48 @@ class MasterController: NSObject{
         }
     }
     
+    //Executes an applescript that moves a podcast from one folder to another
+    func movePodcast(){
+        let script = "set vb2 to POSIX file \"" + preferencesObject.getPodcastOriginFilepath() + "\" \n" +
+                     "set vb4 to POSIX file \"" + preferencesObject.getPodcastDestinationFilepath() + "\" \n" +
+                     "set vb5 to \"" + podcastNameTextField.stringValue + ".mp3\" \n" +
+                     "tell application \"Finder\"\n" +
+                     "set the_files to get every file of folder vb2\n" +
+                     "set latestFile to item 1 of (sort the_files by creation date) as alias\n" +
+                     "set theDuplicate to duplicate latestFile to vb4\n" +
+                     "set name of theDuplicate to vb5 \n" +
+                     "end tell";
+        
+        let scriptObject = NSAppleScript.init(source: script)
+        scriptObject?.executeAndReturnError(nil)
+    }
+    
     @IBAction func podcastInformationOk(sender: AnyObject) {
-        if lastPlayedSongMenu.indexOfSelectedItem <= firstPlayedSongMenu.indexOfSelectedItem  {
-            //Frist song before the last song pls, U R not a wizard
+        //If the first song doesn't come before the last song, alert the user physics can't be denied.
+        if lastPlayedSongMenu.indexOfSelectedItem < firstPlayedSongMenu.indexOfSelectedItem  {
+            let myAlert = NSAlert()
+            myAlert.addButtonWithTitle("Ok")
+            myAlert.messageText = "The first song must go before the last song"
+            myAlert.informativeText = "You are not a wizard. Math doesn't work like that"
+            myAlert.alertStyle = NSAlertStyle.InformationalAlertStyle
+            myAlert.runModal()
         }
+        //Otherwise, generate the podcast information string and pass it to the submit function. Then set the window to its defaults and dismiss the window.
         else{
             var allSongs = ""
             for index in firstPlayedSongMenu.indexOfSelectedItem...lastPlayedSongMenu.indexOfSelectedItem{
                 allSongs += "<delim>" + firstPlayedSongMenu.itemTitles[index]
             }
-            let podcastInformation = "<delim>" + tagsTextField.stringValue + "<delim>" + showDescriptionTextField.stringValue + allSongs
+            var tags = tagsTextField.stringValue
+            var description = showDescriptionTextField.stringValue
+            //I was bitter I had to write this logic at all so I crammed it into one line. Sorry.
+            if tags == "" {tags = "NULL"}; if description == "" {description = "NULL"}
+            let podcastInformation = "<delim>" + tags + "<delim>" + description + allSongs
+            movePodcast()
             submit(podcastInformation)
+            //Sets the window to its defaults and dismisses it. Don't write code twice yo.
+            podcastInformationCancel(self)
+           
         }
     }
     //Cancel's the action of creating a podcast. Dissmisses the podcast information window and resets it to its defaults. The state of the main sign in window is unchanged. The first and last song pop up menus don't need to be reset because they will be reconfigured when the window is called again.

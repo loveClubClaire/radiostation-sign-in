@@ -205,4 +205,12 @@ class Preferences: NSObject {
     func getSongLogFilepath() -> String{
         return songLogFilepath
     }
+    
+    func getPodcastOriginFilepath() -> String{
+        return podcastFilepath
+    }
+    
+    func getPodcastDestinationFilepath() -> String{
+        return podcastDestinationFilepath
+    }
 }
