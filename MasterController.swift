@@ -9,6 +9,7 @@
 import Foundation
 import Cocoa
 
+
 class MasterController: NSObject{
 
     @IBOutlet weak var showNameTextField: NSTextField!
@@ -141,22 +142,6 @@ class MasterController: NSObject{
         }
     }
     
-    //Executes an applescript that moves a podcast from one folder to another
-    func movePodcast(){
-        let script = "set vb2 to POSIX file \"" + preferencesObject.getPodcastOriginFilepath() + "\" \n" +
-                     "set vb4 to POSIX file \"" + preferencesObject.getPodcastDestinationFilepath() + "\" \n" +
-                     "set vb5 to \"" + podcastNameTextField.stringValue + ".mp3\" \n" +
-                     "tell application \"Finder\"\n" +
-                     "set the_files to get every file of folder vb2\n" +
-                     "set latestFile to item 1 of (sort the_files by creation date) as alias\n" +
-                     "set theDuplicate to duplicate latestFile to vb4\n" +
-                     "set name of theDuplicate to vb5 \n" +
-                     "end tell";
-        
-        let scriptObject = NSAppleScript.init(source: script)
-        scriptObject?.executeAndReturnError(nil)
-    }
-    
     @IBAction func podcastInformationOk(sender: AnyObject) {
         //If the first song doesn't come before the last song, alert the user physics can't be denied.
         if lastPlayedSongMenu.indexOfSelectedItem < firstPlayedSongMenu.indexOfSelectedItem  {
@@ -178,7 +163,7 @@ class MasterController: NSObject{
             //I was bitter I had to write this logic at all so I crammed it into one line. Sorry.
             if tags == "" {tags = "NULL"}; if description == "" {description = "NULL"}
             let podcastInformation = "<delim>" + tags + "<delim>" + description + allSongs
-            movePodcast()
+            ApplescriptBridge().moveFileFrom(preferencesObject.getPodcastOriginFilepath(), to: preferencesObject.getPodcastDestinationFilepath(), withName: podcastNameTextField.stringValue)
             submit(podcastInformation)
             //Sets the window to its defaults and dismisses it. Don't write code twice yo.
             podcastInformationCancel(self)

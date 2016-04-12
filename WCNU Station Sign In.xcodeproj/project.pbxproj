@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C00691E71CB8BC8800F75A7B /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00691E61CB8BC8800F75A7B /* Preferences.swift */; };
 		C00691E91CB8BE7100F75A7B /* Apple_Podcast_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C00691E81CB8BE7100F75A7B /* Apple_Podcast_logo.png */; };
+		C00C798D1CBCD2AB00AB4975 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00C798C1CBCD2AB00AB4975 /* AppleScriptObjC.framework */; };
+		C00C79931CBCD2F200AB4975 /* ApplescriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = C00C79911CBCD2F200AB4975 /* ApplescriptBridge.m */; };
+		C00C79991CBCD7BB00AB4975 /* MyApplescript.applescript in Sources */ = {isa = PBXBuildFile; fileRef = C00C79981CBCD7BB00AB4975 /* MyApplescript.applescript */; };
 		C05E554517E395BC00B22312 /* WCNU Sign In Logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = C05E554417E395BC00B22312 /* WCNU Sign In Logo.icns */; };
 		C0739BF117D0067000F10426 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0739BF017D0067000F10426 /* Cocoa.framework */; };
 		C0739BFB17D0067000F10426 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0739BF917D0067000F10426 /* InfoPlist.strings */; };
@@ -22,6 +25,11 @@
 /* Begin PBXFileReference section */
 		C00691E61CB8BC8800F75A7B /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		C00691E81CB8BE7100F75A7B /* Apple_Podcast_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Apple_Podcast_logo.png; sourceTree = "<group>"; };
+		C00C798C1CBCD2AB00AB4975 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
+		C00C79901CBCD2F200AB4975 /* ApplescriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplescriptBridge.h; sourceTree = "<group>"; };
+		C00C79911CBCD2F200AB4975 /* ApplescriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplescriptBridge.m; sourceTree = "<group>"; };
+		C00C79971CBCD7BB00AB4975 /* MyApplescript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyApplescript.h; sourceTree = "<group>"; };
+		C00C79981CBCD7BB00AB4975 /* MyApplescript.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = MyApplescript.applescript; sourceTree = "<group>"; };
 		C05E554417E395BC00B22312 /* WCNU Sign In Logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "WCNU Sign In Logo.icns"; sourceTree = "<group>"; };
 		C0739BED17D0067000F10426 /* WCNU Station Sign In.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WCNU Station Sign In.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0739BF017D0067000F10426 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C00C798D1CBCD2AB00AB4975 /* AppleScriptObjC.framework in Frameworks */,
 				C0739BF117D0067000F10426 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +84,7 @@
 		C0739BEF17D0067000F10426 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C00C798C1CBCD2AB00AB4975 /* AppleScriptObjC.framework */,
 				C0739BF017D0067000F10426 /* Cocoa.framework */,
 				C0739BF217D0067000F10426 /* Other Frameworks */,
 			);
@@ -94,6 +104,10 @@
 		C0739BF617D0067000F10426 /* WCNU Station Sign In */ = {
 			isa = PBXGroup;
 			children = (
+				C00C79971CBCD7BB00AB4975 /* MyApplescript.h */,
+				C00C79981CBCD7BB00AB4975 /* MyApplescript.applescript */,
+				C00C79901CBCD2F200AB4975 /* ApplescriptBridge.h */,
+				C00C79911CBCD2F200AB4975 /* ApplescriptBridge.m */,
 				C0739C0217D0067000F10426 /* AppDelegate.h */,
 				C0739C0317D0067000F10426 /* AppDelegate.m */,
 				C0739C0517D0067000F10426 /* MainMenu.xib */,
@@ -183,10 +197,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C00C79931CBCD2F200AB4975 /* ApplescriptBridge.m in Sources */,
 				C0AA5B211CB8A40300C26251 /* MasterController.swift in Sources */,
 				C0739BFD17D0067000F10426 /* main.m in Sources */,
 				C00691E71CB8BC8800F75A7B /* Preferences.swift in Sources */,
 				C0739C0417D0067000F10426 /* AppDelegate.m in Sources */,
+				C00C79991CBCD7BB00AB4975 /* MyApplescript.applescript in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

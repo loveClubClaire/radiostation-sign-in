@@ -973,7 +973,7 @@ Gw
                     <toolbarItem reference="DpJ-Uw-ioo"/>
                 </defaultToolbarItems>
             </toolbar>
-            <point key="canvasLocation" x="-205" y="-179.5"/>
+            <point key="canvasLocation" x="-152" y="219.5"/>
         </window>
         <view id="tiC-VR-Rz2">
             <rect key="frame" x="0.0" y="0.0" width="450" height="145"/>
@@ -1071,7 +1071,7 @@ Gw
                     </textFieldCell>
                 </textField>
             </subviews>
-            <point key="canvasLocation" x="358" y="-18.5"/>
+            <point key="canvasLocation" x="373" y="242.5"/>
         </view>
         <view id="R1C-id-fLt">
             <rect key="frame" x="0.0" y="0.0" width="450" height="145"/>
@@ -1169,7 +1169,7 @@ Gw
                     </textFieldCell>
                 </textField>
             </subviews>
-            <point key="canvasLocation" x="358" y="-199.5"/>
+            <point key="canvasLocation" x="373" y="61.5"/>
         </view>
     </objects>
     <resources>
