@@ -17,9 +17,9 @@
 		C0739C0117D0067000F10426 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C0739BFF17D0067000F10426 /* Credits.rtf */; };
 		C0739C0417D0067000F10426 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0739C0317D0067000F10426 /* AppDelegate.m */; };
 		C0739C0717D0067000F10426 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0739C0517D0067000F10426 /* MainMenu.xib */; };
-		C085E6341CC60FAB002906ED /* MasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C085E6331CC60FAB002906ED /* MasterController.swift */; };
 		C085E6371CC60FB8002906ED /* WCNU Sign In Logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = C085E6351CC60FB8002906ED /* WCNU Sign In Logo.icns */; };
 		C085E6381CC60FB8002906ED /* Apple_Podcast_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C085E6361CC60FB8002906ED /* Apple_Podcast_logo.png */; };
+		C085E63C1CC6113E002906ED /* MasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C085E63B1CC6113E002906ED /* MasterController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,9 +42,9 @@
 		C0739C0217D0067000F10426 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C0739C0317D0067000F10426 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C0739C0617D0067000F10426 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		C085E6331CC60FAB002906ED /* MasterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterController.swift; sourceTree = "<group>"; };
 		C085E6351CC60FB8002906ED /* WCNU Sign In Logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "WCNU Sign In Logo.icns"; sourceTree = "<group>"; };
 		C085E6361CC60FB8002906ED /* Apple_Podcast_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Apple_Podcast_logo.png; sourceTree = "<group>"; };
+		C085E63B1CC6113E002906ED /* MasterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterController.swift; sourceTree = "<group>"; };
 		C0AA5B1F1CB8A40300C26251 /* WCNU Station Sign In-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WCNU Station Sign In-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +111,7 @@
 				C0739C0217D0067000F10426 /* AppDelegate.h */,
 				C0739C0317D0067000F10426 /* AppDelegate.m */,
 				C0739C0517D0067000F10426 /* MainMenu.xib */,
-				C085E6331CC60FAB002906ED /* MasterController.swift */,
+				C085E63B1CC6113E002906ED /* MasterController.swift */,
 				C00691E61CB8BC8800F75A7B /* Preferences.swift */,
 				C0739BF717D0067000F10426 /* Supporting Files */,
 			);
@@ -198,7 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C00C79931CBCD2F200AB4975 /* ApplescriptBridge.m in Sources */,
-				C085E6341CC60FAB002906ED /* MasterController.swift in Sources */,
+				C085E63C1CC6113E002906ED /* MasterController.swift in Sources */,
 				C0739BFD17D0067000F10426 /* main.m in Sources */,
 				C00691E71CB8BC8800F75A7B /* Preferences.swift in Sources */,
 				C0739C0417D0067000F10426 /* AppDelegate.m in Sources */,
